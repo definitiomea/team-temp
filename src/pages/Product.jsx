@@ -3,12 +3,28 @@ import { Container, Row, Col } from "react-bootstrap";
 import Slider from "react-slick";
 
 const Product = () => {
+  const color = ["#FF0000", "#00FF00", "#0000FF", "#FFFF00", "#00FFFF"];
+
   const settings = {
     dots: true,
     infinite: true,
     speed: 500,
     slidesToShow: 1,
-    slidesToScroll: 1
+    slidesToScroll: 1,
+    customPaging: i => (
+      <div
+        style={{
+          width: "10px",
+          height: "10px",
+          color: color[i],
+          border: `1px ${color[i]} solid`,
+          borderRadius: "50%",
+          backgroundColor: color[i]
+        }}
+      >
+        {/* {i + 1} */}
+      </div>
+    )
   };
 
   return (
